@@ -1,7 +1,5 @@
 import math
 
-top = 20
-
 def is_prime(x):
 	if x == 2:
 		return True
@@ -12,19 +10,15 @@ def is_prime(x):
 			return False
 	return True
 
-def power_trip(x):
-	if x * x > top:
-		return x
-	y = 2
-	while x ** y <= top:
-		y += 1
-	return (x ** (y - 1))
+def power_trip(n, user_input):
+	expo = 1
+	while n ** (expo + 1) <= user_input:
+		expo += 1
+	return n ** expo
 
-def main(x):
-	n = 1
-	for y in xrange(2, x + 1):
-		if is_prime(y):
-			n = n * power_trip(y)
-	return n
-
-print main(top)
+def main(user_input):
+	running_product = 1
+	for i in xrange(2, user_input + 1):
+		if is_prime(i):
+			running_product *= power_trip(i, user_input)
+	return running_product
