@@ -3,6 +3,8 @@ import math
 n = 600851475143
 
 def isprime(p):
+	if p == 2:
+		return True
 	if p % 2 == 0:
 		return False
 	for d in xrange(3, int(math.sqrt(p)) + 1, 2):
