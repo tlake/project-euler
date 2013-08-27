@@ -21,34 +21,10 @@ def nth_prime(goal):
 		print number
 
 def is_prime(test):
-#I guess I could save on a bit of computing power...
 	if test == 2:
 		return True
-	if test == 3:
-		return True
-	if test == 5:
-		return True
-	if test == 7:
-		return True
-	if test == 11:
-		return True
-	if test == 13:
-		return True
-#...by eliminating some early divisors.
 	if test % 2 == 0:
 		return False
-	if test % 3 == 0:
-		return False
-	if test % 5 == 0:
-		return False
-	if test % 7 == 0:
-		return False
-	if test % 11 == 0:
-		return False
-	if test % 13 == 0:
-		return False
-#maybe I should automate that idea...
-#later, though; working code first.
 	for d in xrange(3, int(math.sqrt(test)) + 1, 2):
 		if test % d == 0:
 			return False
