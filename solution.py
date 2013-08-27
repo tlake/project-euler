@@ -1,24 +1,10 @@
-import math
+import math, itertools
 
-#this is gonna be the dumb, first, but hopefully more or less
-#effective brute force tanner method
-
-#someday I hope to be able to skip this first step and just
-#generate a one-level-more-elegant version at the start.
 
 def nth_prime(goal):
-	#start counting up numbers
-	number = 1
-	prime_counter = 0
-	#for each number, test if it's prime
-	#if it is, add one to the prime counter
-	while prime_counter != goal:
-		number += 1
-		if is_prime(number):
-			prime_counter += 1
-	#print the prime when the counter = the goal
-	if prime_counter == goal:
-		print number
+	return list(itertools.islice((x for x in itertools.count(1) if is_prime(x)), goal - 1, goal))
+
+
 
 def is_prime(test):
 	if test == 2:
