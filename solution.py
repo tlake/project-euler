@@ -7,18 +7,10 @@ def nth(desired_prime, iterable):
 		next(the_generator)
 	return next(the_generator)
 
-def prime_gen():
-	return (x for x in itertools.count(2) if is_prime(x))	
 
-	# This is just sugar for
-	#	for x in itertools.count(2):
-	#		if is_prime(x):	
-	#			yield x
-	# The round brackets make a generator,
-	# square brackets would make a list.
-	# A list here would be bad. It would be infinitely big.
-	# Lol.
-	
+def prime_gen():
+	return (x for x in itertools.count(2) if is_prime(x))
+
 
 def is_prime(test):
 	if test == 2:
@@ -29,10 +21,3 @@ def is_prime(test):
 		if test % d == 0:
 			return False
 	return True
-
-
-def nth_prime(desired_prime):
-	generator_title = prime_gen()
-	for x in range(desired_prime - 1):
-		next(generator_title)
-	return next(generator_title)
