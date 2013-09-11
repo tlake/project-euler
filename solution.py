@@ -27,8 +27,3 @@ def is_prime(test):
 		if test % d == 0:
 			return False
 	return True
-
-
-def gen_test():
-	for x in range(5):
-		yield x
