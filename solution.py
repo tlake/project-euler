@@ -1,10 +1,22 @@
 import math, itertools
 
 
-def nth_prime(goal):
-	return list(itertools.islice((x for x in itertools.count(1) if is_prime(x)), goal - 1, goal))
+def main(desired_prime):
+	return nth(desired_prime)
 
 
+def nth(desired_prime):
+	generator_title = prime_gen()
+	for x in range(desired_prime - 1):
+		next(generator_title)
+	return next(generator_title)
+
+
+def prime_gen():
+	for x in itertools.count(2):
+		if is_prime(x):	
+			yield x
+	
 
 def is_prime(test):
 	if test == 2:
@@ -17,4 +29,6 @@ def is_prime(test):
 	return True
 
 
-
+def gen_test():
+	for x in range(5):
+		yield x
