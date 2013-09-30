@@ -6,8 +6,9 @@ def slice_generator(string, slice_length):
 
 def multiply_interiors(number):
 	storage = 1
-	for x in range(len(str(number))):
-		storage *= int(str(number)[x:x + 1])
+	string = str(number)
+	for x in string:
+		storage *= int(x)
 	return storage
 
 def consecutive_digits_product(seed_number, consecutive_number):
