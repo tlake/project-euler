@@ -6,9 +6,9 @@ def slice_generator(string, slice_length):
 	for x in xrange(len(string) - slice_length):
 		yield string[x:x + slice_length]
 
-def multiply_interiors(number):
+def multiply_interiors(stringed_number):
 	lst = []
-	for x in number:
+	for x in stringed_number:
 		lst.append(int(x))
 	return reduce(operator.mul, lst)
 
